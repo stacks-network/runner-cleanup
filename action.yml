@@ -67,7 +67,6 @@ runs:
         echo
 
         echo "Removing unwanted software... "
-        sudo apt-get update
         if [[ ${{ inputs.remove-dotnet }} == 'true' ]]; then
           sudo rm -rf /usr/share/dotnet
         fi
@@ -83,7 +82,6 @@ runs:
         if [[ ${{ inputs.remove-docker-images }} == 'true' ]]; then
           sudo docker image prune --all --force
         fi
-        sudo apt-get autoremove -y
         sudo apt-get clean
         echo "... done"
 
@@ -95,10 +93,5 @@ runs:
         echo
         swapon --show
         echo
-        echo "space: /usr/lib/jvm"
-        du -sh /usr/lib/jvm
-        du -sh /usr/lib/*
-        echo "dpkg --list"
-        dpkg -l
         echo "Available storage:"
         df -h
