@@ -4,8 +4,8 @@
 name: "Maximize build disk space"
 description: "Maximize the available disk space for your build job"
 branding:
-  icon: "crop"
-  color: "orange"
+  icon: "trash"
+  color: "gray-dark"
 inputs:
   remove-dotnet:
     description: "Removes .NET runtime and libraries. (frees ~17 GB)"
